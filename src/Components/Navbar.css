@@ -1,0 +1,14 @@
+.nav {
+    margin:0;
+    padding: 0;
+    background-color: #434854;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  .icon{
+    margin-left:200px;
+  }
+  .header{
+    text-align:center;
+}
