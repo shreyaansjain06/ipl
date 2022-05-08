@@ -10,10 +10,13 @@ const Chartdata = () => {
   const [category,setCategory]=useState([])
   const [matches,setMatches]=useState([])
   const [toss,setToss]=useState([])
+  const [tie,setTie]=useState([])
+  
     useEffect(() =>{
       const runScored=[]
       const wicket=[]
       const matchesWon=[]
+      const ties=[0]
       let tossWin=[0,0]
         d3.csv(data).then(data=>{
             var arr = new Array(14);
@@ -53,22 +56,66 @@ const Chartdata = () => {
                 arr[index][2]=Math.max(arr[index][2],data[i].win_by_wickets)
                 arr[index][3]++;
               }
+              else{
+                ties[0]++;
+              }
             }
             for(let i=0; i<categories.length; i++){
               runScored.push(arr[i][1]);
               wicket.push(arr[i][2]);
               matchesWon.push(arr[i][3]);
             }
+           ties[1]=data.length-ties[0];
             setRuns(runScored);
             setWickets(wicket);
             setMatches(matchesWon);
             setCategory(categories);
             setToss(tossWin);
+            setTie(ties);
         })
     },[])
   return (
     <>
     <div className="chart">
+      <div className="flex">
+      
+    <Chart
+   type="pie"
+   width={649}
+   height={400}
+
+   series={tie}
+  options={{
+    title:{
+      text: "Ties/Non Ties"
+    },
+    labels:["Tie Matches","Not Tie Matches"]
+    
+  }}
+   />
+   <Chart
+   type="bar"
+   width={300}
+   height={403}
+
+   series={ [
+    {
+      name: "Choosen after Winning toss",
+      data: toss
+    }
+  ]}
+  options={{
+    title:{
+      text: "Total tosses"
+    },
+    xaxis:{
+      tickPlacement:"on",
+      categories:["bat","field"]
+    }
+  }}
+   />
+      </div>
+    
    <Chart
    type="bar"
    width={1100}
@@ -87,7 +134,8 @@ const Chartdata = () => {
     xaxis:{
       tickPlacement:"on",
       categories:category
-    }
+    },
+    colors:['#DA3EEC']
   }}
 
    />
@@ -130,28 +178,8 @@ const Chartdata = () => {
     xaxis:{
       tickPlacement:"on",
       categories:category
-    }
-  }}
-   />
-   <Chart
-   type="bar"
-   width={300}
-   height={700}
-
-   series={ [
-    {
-      name: "Total Tosses Won",
-      data: toss
-    }
-  ]}
-  options={{
-    title:{
-      text: "Tosses Wins"
     },
-    xaxis:{
-      tickPlacement:"on",
-      categories:["bat","field"]
-    }
+    colors:['#DA3EEC']
   }}
    />
    </div>

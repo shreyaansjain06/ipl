@@ -3,8 +3,8 @@ import "./Sidebar.css";
 const Sidebar = () => {
   return (
     <>
-    <div class="sidebar">
-  <a class="active" href="#home">Dashboard</a>
+    <div className="sidebar">
+  <a className="active" href="#home">Dashboard</a>
   <a href="#news">Profile</a>
   <a href="#contact">Calender</a>
   <a href="#about">About</a>
