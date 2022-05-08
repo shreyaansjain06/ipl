@@ -1,7 +1,23 @@
-.chart{
-    width: 70%;
+.chart {
+  overflow: scroll;
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.flex{
-    display:flex;
-    flex-direction: row;
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 1170px) {
+  .flex{
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 900px) {
+  .chart{
+    width: 100%;
+  }
 }

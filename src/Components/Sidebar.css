@@ -1,49 +1,34 @@
-
 .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 13rem;
-    background-color: #434854;
-    position: fixed;
-    height: 95vh;
-    left:-100%;
-    transition: all 1s;
-  }
-  
-  .sidebar a {
-    display: block;
-    color: white;
-    padding: 16px;
-    text-decoration: none;
-    text-align: center;
-  }
-  
-  .sidebar a.active {
-    background-color: #00E296;
-    color: black;
-  }
-  
-  .sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-  }
-  .show{
-    left:0
-  }
-  
-  
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-  }
-  
-  @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-  }
+  margin: 0;
+  padding: 0;
+  width: 13rem;
+  background-color: #434854;
+  position: fixed;
+  height: 100%;
+  top: 7vh;
+  left: -100%;
+  transition: all 1s;
+  z-index:1;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.sidebar a.active {
+  background-color: #00e296;
+  color: black;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+.show {
+  left: 0;
+}
+
