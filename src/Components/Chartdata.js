@@ -79,20 +79,24 @@ const Chartdata = () => {
         <div className="flex">
           <Chart
             type="pie"
-            width={649}
-            height={400}
+            width={450}
+            height='100%'
             series={tie}
             options={{
               title: {
                 text: 'Ties/Non Ties',
+              },
+              legend:{
+                show: true,
+                position:'bottom',
               },
               labels: ['Tie Matches', 'Not Tie Matches'],
             }}
           />
           <Chart
             type="bar"
-            width={300}
-            height={403}
+            width="100%"
+            height={400}
             series={[
               {
                 name: 'Choosen after Winning toss',
@@ -113,8 +117,8 @@ const Chartdata = () => {
 
         <Chart
           type="bar"
-          width={1100}
-          height={500}
+          width='100%'
+          height={400}
           series={[
             {
               name: 'Biggest wins by runs',
@@ -134,8 +138,8 @@ const Chartdata = () => {
         />
         <Chart
           type="bar"
-          width={1100}
-          height={500}
+          width='100%'
+          height={400}
           series={[
             {
               name: 'Biggest wins by wickets',
@@ -154,8 +158,8 @@ const Chartdata = () => {
         />
         <Chart
           type="bar"
-          width={1100}
-          height={500}
+          width= '100%'
+          height={400}
           series={[
             {
               name: 'Total matches Won',

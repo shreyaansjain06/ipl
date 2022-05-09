@@ -1,15 +1,11 @@
 .chart {
-  overflow: scroll;
-  display: flex;
-  width: 70%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  max-width: 760px;
+  opacity: 0.9;
 }
 .flex {
   display: flex;
   flex-direction: row;
+  justify-content: evenly;
 }
 @media screen and (max-width: 1170px) {
   .flex{

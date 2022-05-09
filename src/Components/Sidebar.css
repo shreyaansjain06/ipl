@@ -1,7 +1,7 @@
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 13rem;
+  width: 13vw;
   background-color: #434854;
   position: fixed;
   height: 100%;
@@ -9,6 +9,7 @@
   left: -100%;
   transition: all 1s;
   z-index:1;
+  text-align: center;
 }
 
 .sidebar a {
@@ -16,7 +17,6 @@
   color: white;
   padding: 16px;
   text-decoration: none;
-  text-align: center;
 }
 
 .sidebar a.active {
@@ -32,3 +32,8 @@
   left: 0;
 }
 
+@media screen and (max-width: 920px) {
+  .sidebar{
+    width: 100%;
+  }
+}
