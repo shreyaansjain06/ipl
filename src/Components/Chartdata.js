@@ -79,7 +79,7 @@ const Chartdata = () => {
         <div className="flex">
           <Chart
             type="pie"
-            width={450}
+            width={350}
             height='100%'
             series={tie}
             options={{
